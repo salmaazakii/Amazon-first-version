@@ -1,0 +1,150 @@
+$base-color: #EAEDED;
+$navBackground:#131921;
+$navBackground:#232F3E;
+$iconColor:#F3A847;
+// mixin for background color
+$font:amazon-font,Arial, Helvetica, sans-serif;
+@font-face {
+    font-family: amazon-font;
+    src: url(../Font-Family/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_Rg.ttf);
+  }
+  @font-face {
+    font-family: amazon-font;
+    src: url(../Font-Family/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_Bd.ttf);
+    font-weight: bold;
+}
+@font-face {
+  font-family: amazon-font;
+  src: url(../Font-Family/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/Amazon-Ember-Medium.ttf);
+  font-weight: medium;
+}
+@font-face {
+  font-family: amazon-font;
+  src: url(../Font-Family/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_Th.ttf);
+  font-weight: thick;
+}
+@mixin setBgColor($color) {
+    background-color:$color;
+}
+@mixin setTextColor($color) {
+    color:$color;
+}
+
+.navBg{@include setBgColor(#131921);}
+.nav-2-Bg{@include setBgColor(#232F3E);}
+.icon-color{@include setBgColor($iconColor);}
+.icon-text-color{@include setTextColor($iconColor);}
+// mixin For Size
+@mixin baseFonts($fontsize) {
+    font-size:$fontsize;
+    $baseFont: $font,Arial, Helvetica, sans-serif;  
+  }
+  *{
+    font-family: amazon-font,Arial, Helvetica, sans-serif;  
+    padding: 0;
+    margin: 0;
+  }
+  p{
+      margin: 0;
+      padding: 0;
+  }
+  .font-0{
+    @include baseFonts(0.8em);
+  }
+
+  .font-1{
+    @include baseFonts(0.95em);
+  }
+
+  .font-2{
+    @include baseFonts(1em);
+  }
+
+  .font-3{
+    @include baseFonts(1.2em);
+  }
+// img sizes
+  @mixin imgSize($imgSize) {
+    width:$imgSize;
+     
+  }
+  .imgSize_0{ @include imgSize(0.5em);}
+  .imgSize_1{ @include imgSize(0.75em);}
+  .imgSize_2{ @include imgSize(1em);}
+  .imgSize_3{ @include imgSize(2em);}
+  .imgSize_4{ @include imgSize(3em);}
+  .imgSize_5{ @include imgSize(4em);}
+// hover menu
+
+// min width
+
+  .fit-content{ width:max-content;}
+
+  // on hover Nav2
+  .nav-height{
+    min-height: 3.25em;
+  }
+
+  .nav-hover:hover{
+      border: 1px white solid;
+      border-radius: 1px;
+  }
+
+  // indicator position
+
+  .indicator{
+      top:50%
+  }
+
+  // item container position
+
+  .item-container{
+    top:-140px;
+    min-width: 100%;
+  }
+// img in items Container
+  .imgContainer{
+    width: 100%;
+      height: 300px;
+      background-position: top;
+      background-repeat: no-repeat ;
+      background-size: cover;
+    background-image: url(../img/background/1.jpg)
+  }
+
+  // side bar
+  .side-bar-container{
+    left: 0;
+    top: 0;
+    position: fixed;
+    z-index: 30;
+  }
+  .side-bar{
+    width: 50vw;
+    overflow: auto;
+  }
+  @media only screen and (min-width: 576px) {
+    .side-bar {
+      width: 30vw;
+      
+
+    }
+  }
+  #sideBar{
+    display: none;
+  }
+  
+
+  .side-bar-bg{
+    left: 0;
+    top: 0;
+    z-index: 30;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.6;
+    position: fixed;
+  }
+  .side-nav-bg{
+    background-color: #232F3E;
+  }

@@ -1,0 +1,154 @@
+@font-face {
+  font-family: amazon-font;
+  src: url(../Font-Family/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_Rg.ttf);
+}
+@font-face {
+  font-family: amazon-font;
+  src: url(../Font-Family/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_Bd.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: amazon-font;
+  src: url(../Font-Family/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/Amazon-Ember-Medium.ttf);
+  font-weight: medium;
+}
+@font-face {
+  font-family: amazon-font;
+  src: url(../Font-Family/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_Th.ttf);
+  font-weight: thick;
+}
+.navBg {
+  background-color: #131921;
+}
+
+.nav-2-Bg {
+  background-color: #232F3E;
+}
+
+.icon-color {
+  background-color: #F3A847;
+}
+
+.icon-text-color {
+  color: #F3A847;
+}
+
+* {
+  font-family: amazon-font, Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.font-0 {
+  font-size: 0.8em;
+}
+
+.font-1 {
+  font-size: 0.95em;
+}
+
+.font-2 {
+  font-size: 1em;
+}
+
+.font-3 {
+  font-size: 1.2em;
+}
+
+.imgSize_0 {
+  width: 0.5em;
+}
+
+.imgSize_1 {
+  width: 0.75em;
+}
+
+.imgSize_2 {
+  width: 1em;
+}
+
+.imgSize_3 {
+  width: 2em;
+}
+
+.imgSize_4 {
+  width: 3em;
+}
+
+.imgSize_5 {
+  width: 4em;
+}
+
+.fit-content {
+  width: max-content;
+}
+
+.nav-height {
+  min-height: 3.25em;
+}
+
+.nav-hover:hover {
+  border: 1px white solid;
+  border-radius: 1px;
+}
+
+.indicator {
+  top: 50%;
+}
+
+.item-container {
+  top: -140px;
+  min-width: 100%;
+}
+
+.imgContainer {
+  width: 100%;
+  height: 300px;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../img/background/1.jpg);
+}
+
+.side-bar-container {
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: 30;
+}
+
+.side-bar {
+  width: 50vw;
+  overflow: auto;
+}
+
+@media only screen and (min-width: 576px) {
+  .side-bar {
+    width: 30vw;
+  }
+}
+#sideBar {
+  display: none;
+}
+
+.side-bar-bg {
+  left: 0;
+  top: 0;
+  z-index: 30;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.6;
+  position: fixed;
+}
+
+.side-nav-bg {
+  background-color: #232F3E;
+}
+
+/*# sourceMappingURL=style.css.map */
