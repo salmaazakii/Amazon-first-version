@@ -134,7 +134,6 @@ $font:amazon-font,Arial, Helvetica, sans-serif;
     display: none;
   }
   
-
   .side-bar-bg{
     left: 0;
     top: 0;
@@ -148,3 +147,26 @@ $font:amazon-font,Arial, Helvetica, sans-serif;
   .side-nav-bg{
     background-color: #232F3E;
   }
+
+.ft-bg{
+background-color: #232F3E;
+}
+.ft-head-bg{
+  background-color:#37475A;
+}
+.ft-head-hover:hover{
+  background-color: #485769;
+}
+.ft-tail-bg{
+  background-color: #131A22;
+
+}
+.underline-hover:hover{
+  text-decoration: underline;
+}
+// department Page
+// side filter bar 
+.hover-txt-orange:hover{
+  color:#c45500!important;
+  cursor: alias;
+}
