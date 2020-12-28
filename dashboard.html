@@ -243,11 +243,12 @@
       </ul>
     </div>
   </nav>
+
   <!-- Nav Bar2 -->
-  <nav class="navbar navbar-expand-md navbar-dark nav-2-Bg py-0 px-2 nav-height font-amazon-normal">
+  <nav class="navbar navbar-expand-md navbar-dark nav-2-Bg py-0 px-2 nav-height font-amazon-normal" >
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- list1 start -->
-      <ul class="navbar-nav justify-content-start align-items-baseline ">
+      <ul class="nav navbar-nav justify-content-start align-items-baseline " role="tablist">
         <li class="nav-item nav-hover" onclick="showSide()">
           <!-- All menus -->
             <a class="nav-link  d-flex align-items-end " id="sidebtn">
@@ -255,33 +256,33 @@
               <span class="font-2 px-1 text-white">All</span>
             </a>
         </li>
-        <li class="nav-item nav-hover">
-          <a class="nav-link" href="#">
-            <span class="text-white">Dashboard</span>
+        <li class="nav-item nav-hover "onclick="activeTab(this)">
+          <a class="nav-link active manager-tabs" data-toggle="tab" href="#dashboard">
+            <span class="text-white active-tab font-amazon-bold">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item nav-hover">
-          <a class="nav-link" href="#">
-            <span class="text-white">Products</span>
+        <li class="nav-item nav-hover"onclick="activeTab(this)">
+          <a class="nav-link manager-tabs" data-toggle="tab" href="#products">
+            <span class="text-white " >Products</span>
           </a>
         </li>
-        <li class="nav-item nav-hover">
-          <a class="nav-link" href="#">
+        <li class="nav-item nav-hover"onclick="activeTab(this)">
+          <a class="nav-link manager-tabs" data-toggle="tab" href="#orders">
             <span class="text-white">Orders</span>
           </a>
         </li>
-        <li class="nav-item nav-hover">
-          <a class="nav-link" href="#">
-            <span class="text-white">Customers</span>
+        <li class="nav-item nav-hover"onclick="activeTab(this)">
+          <a class="nav-link manager-tabs" data-toggle="tab" href="#customers">
+            <span class="text-white active-oragne">Customers</span>
           </a>
         </li>
         <li class="nav-item nav-hover">
-          <a class="nav-link " href="#">
+          <a class="nav-link manager-tabs "onclick="activeTab(this)" data-toggle="tab" href="#sellers">
             <span class="text-white">Sellers</span>
           </a>
         </li>
-        <li class="nav-item nav-hover">
-          <a class="nav-link " href="#">
+        <li class="nav-item nav-hover"onclick="activeTab(this)">
+          <a class="nav-link manager-tabs" data-toggle="tab" href="#earings">
             <span class="text-white">Earings</span>
           </a>
         </li>
@@ -320,9 +321,11 @@
             </ul>
         </div>
     </nav>
-    <!-- page content  -->
+    <!-- pages taps content -->
+    <div class="tab-content"id="pages-content">
+    <!-- page content1 Products  -->
     <!-- layout -->
-    <div class="container-fluid">
+    <div class="container-fluid tab-pane fade show active" id="products">
     <div class="row ">
             <!-- side bar For Filtration -->
             <div class=" col-md-4 col-lg-3 col-xl-2 font-amazon-normal row mx-0 justify-content-around  ">
@@ -451,7 +454,7 @@
                 <!-- Product Section -->
                 <div class=" row">
                     <div class="col-12 ">
-                        <!-- top bar filter -->
+                        <!--Product top bar filter -->
                         <div class="row shadow-sm p-2">
                             <div class="max-content ft-head-bg ft-head-hover font-amazon-normal text-white p-1 mx-1 rounded-pill font-0" >
                                 <span class="">Department1</span> 
@@ -462,22 +465,22 @@
                                 <span class="fas fa-times"></span>
                             </div>
                         </div>
-                        <!-- tabs -->
+                        <!--Product tabs -->
                         <div class="container-fluid">
                           <ul class="nav nav-tabs font-amazon-bold " id="myTab" role="tablist">
                             <li class="nav-item " role="presentation">
-                              <a class="nav-link active px-1" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Details</a>
+                              <a class="nav-link active px-1" id="productDet-tab" data-toggle="tab" href="#productDet" role="tab" aria-controls="home" aria-selected="true">Details</a>
                             </li>
                             <li class="nav-item " role="presentation">
-                              <a class="nav-link px-1" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Summary</a>
+                              <a class="nav-link px-1" id="productSumm-tab" data-toggle="tab" href="#productSumm" role="tab" aria-controls="profile" aria-selected="false">Summary</a>
                             </li>
                             <li class="nav-item " role="presentation">
-                              <a class="nav-link px-1" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Expected</a>
+                              <a class="nav-link px-1" id="productExp-tab" data-toggle="tab" href="#productExp" role="tab" aria-controls="contact" aria-selected="false">Expected</a>
                             </li>
                           </ul>
                           <!-- tabs content -->
-                          <div class="tab-content py-1" id="myTabContent">
-                            <div class="tab-pane fade show active overflow-auto" id="home" role="tabpanel" aria-labelledby="home-tab">
+                          <div class="tab-content py-1" id="productTabsContent">
+                            <div class="tab-pane fade show active overflow-auto" id="productDet" role="tabpanel" aria-labelledby="home-tab">
                                  <!-- Product table -->
                         <table class="table font-amazon-normal table-hover min-content">
                           <thead class="font-amazon-bold">
@@ -485,12 +488,13 @@
                                   <th scope="col">serial </th>
                                   <th scope="col">Name</th>
                                   <th scope="col">Number</th>
-                                  <th scope="col">Ordered Number</th>
+                                  <th scope="col"># Ordered </th>
                                   <th scope="col">Price <span class="fas fa-dollar-sign"></span></th>
                                   <th scope="col">Tax % <span class="fas fa-dollar-sign"></span></th>
                                   <th scope="col">Total Price <span class="fas fa-dollar-sign"></span></th>
                                   <th scope="col">Total Tax <span class="fas fa-dollar-sign"></span></th>
-                                  <th scope="col">state</th>
+                                  <th scope="col">Delivered %</th>
+                                  <th scope="col">Cancelled %</th>
                                   <th scope="col">Seller</th>
                                   <th scope="col">Product Rate</th>
                                   <th scope="col">Seller Rate</th>
@@ -510,7 +514,8 @@
                                   <td>25<span>&nbsp</span><span>%</span></td>
                                   <td>250<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
                                   <td>250<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
-                                  <td><span class="fas fa-check-circle text-success font-3"></span></td>
+                                  <td>80<span>&nbsp%&nbsp</span><span class="fas fa-check-circle text-success font-3"></span></td>
+                                  <td>20<span>&nbsp%&nbsp</span><span class="fas fa-times-circle text-danger font-3"></span></td>
                                   <td>John Dick</td>
                                   <td>5.0</td>
                                   <td>5.0</td>
@@ -525,8 +530,9 @@
                                 <td>25<span>&nbsp</span><span>%</span></td>
                                 <td>250<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
                                 <td>250<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
-                              <td><span class="fas fa-times-circle text-danger font-3 "></span></td>
-                                <td>John Dick</td>
+                                <td>80<span>&nbsp%&nbsp</span><span class="fas fa-check-circle text-success font-3"></span></td>
+                                <td>20<span>&nbsp%&nbsp</span><span class="fas fa-times-circle text-danger font-3"></span></td>
+                              <td>John Dick</td>
                                 <td>5.0</td>
                                 <td>5.0</td>
 
@@ -536,92 +542,149 @@
                       </table>
                       <!-- summary tap -->
                             </div>
-                            <div class="tab-pane fade py-1" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                              <canvas class="my-4 w-100" id="myChart"  ></canvas>
+                            <div class="tab-pane fade show  py-1" id="productSumm" role="tabpanel" aria-labelledby="profile-tab">
+                              <canvas class="my-4 w-100" id="product-chart"  ></canvas>
 
                             </div>
-                            <div class="tab-pane fade py-1" id="contact" role="tabpanel" aria-labelledby="contact-tab">aaaaaaa</div>
+                            <div class="tab-pane fade py-1" id="productExp" role="tabpanel" aria-labelledby="contact-tab"></div>
                           </div>
                         </div>
                      
                       
                     </div>
                 </div>
-
-                <!-- Customers Section -->
-                <div class=" row">
-                  <div class="col-12 ">
-                      <!-- top bar filter -->
-                      <div class="row shadow-sm p-2">
-                          <div class="max-content ft-head-bg ft-head-hover font-amazon-normal text-white p-1 mx-1 rounded-pill font-0" >
-                              <span class="">Department1</span> 
-                              <span class="fas fa-times"></span>
-                          </div>
-                          <div class="max-content ft-head-bg ft-head-hover font-amazon-normal text-white p-1 mx-1 rounded-pill font-0" >
-                              <span class="">Brand 1</span> 
-                              <span class="fas fa-times"></span>
-                          </div>
-                      </div>
-                      <!-- tabs -->
-                      <div class="container-fluid">
-                        <ul class="nav nav-tabs font-amazon-bold " id="myTab" role="tablist">
-                          <li class="nav-item " role="presentation">
-                            <a class="nav-link active px-1" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Details</a>
-                          </li>
-                          <li class="nav-item " role="presentation">
-                            <a class="nav-link px-1" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Summary</a>
-                          </li>
-                          <li class="nav-item " role="presentation">
-                            <a class="nav-link px-1" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Expected</a>
-                          </li>
+            </div>
+        </div>
+      </div>
+        <!-- page content2 Customers -->
+        <!-- layout -->
+      <div class="container-fluid tab-pane fade show " id="customers">
+        <div class="row ">
+                <!-- Customer side bar For Filtration -->
+                <div class=" col-md-4 col-lg-3 col-xl-2 font-amazon-normal row mx-0 justify-content-around  ">
+                    <!-- filter Department -->
+                    <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 d-flex flex-column justify-content-center">
+                        <p class="font-amazon-bold">Department</p>
+                        <ul class="custom-control custom-checkbox ">
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="dep1">
+                                <label class="custom-control-label " for="dep1" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Department1</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="dep2">
+                                <label class=" custom-control-label " for="dep2" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Department2</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="dep3">
+                                <label class="custom-control-label " for="dep3" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Department3</p>
+                                </label>
+                            </li>
                         </ul>
-                        <!-- tabs content -->
-                        <div class="tab-content py-1" id="myTabContent">
-                          <div class="tab-pane fade show active overflow-auto" id="home" role="tabpanel" aria-labelledby="home-tab">
-                               <!-- orders table -->
-                      <table class="table font-amazon-normal table-hover min-content">
-                        <thead class="font-amazon-bold">
-                            <tr>
-                                <th scope="col">Id </th>
-                                <th scope="col">CustmorName</th>
-                                <th scope="col">Ordered Number</th>
-                                <th scope="col">Ordered Price <span class="fas fa-dollar-sign"></span></th>
-                                <th scope="col">Avg.site rate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- row1 -->
-                            <tr>
-                                <th class="font-amazon-normal" scope="row">1</th>
-                                <td>Jone Adames</td>
-                                <td>500</td>
-                                <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
-                                <td>5.0</td>
-                            </tr>
-                            <!-- row2  -->
-                            <tr>
-                                <th class="font-amazon-normal" scope="row">1</th>
-                                <td>Joe bradly</td>
-                                <td>500</td>
-                                <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
-                                <td>4.0</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!-- summary tap -->
-                          </div>
-                          <div class="tab-pane fade py-1" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <canvas class="my-4 w-100" id="myChart"  ></canvas>
-
-                          </div>
-                          <div class="tab-pane fade py-1" id="contact" role="tabpanel" aria-labelledby="contact-tab">aaaaaaa</div>
-                        </div>
+                    </div>
+                
+                    <!-- filter brand -->
+                    <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 d-flex flex-column justify-content-center">
+                        <p class="font-amazon-bold">Brand</p>
+                        <ul class="custom-control custom-checkbox ">
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="brand1">
+                                <label class="custom-control-label " for="brand1" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Brand1</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="brand2">
+                                <label class=" custom-control-label " for="brand2" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Brand2</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="brand3">
+                                <label class="custom-control-label " for="brand3" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Brand3</p>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- filter Deliver State -->
+                    <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 d-flex flex-column justify-content-center">
+                        <p class="font-amazon-bold">Deliever State</p>
+                        <ul class="custom-control custom-checkbox ">
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="delievered">
+                                <label class="custom-control-label " for="delievered" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Delievered</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="cancelled">
+                                <label class=" custom-control-label " for="cancelled" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Cancelled</p>
+                                </label>
+                            </li>
+    
+                        </ul>
+                    </div>
+                        <!-- filter Price -->
+                        <div class="col-md-12 col-sm col-6 m-0 px-0 py-1 ">
+                          <p class="font-amazon-bold py-2">Price</p>
+                          <ul>
+                              <li class="d-flex flex-column ">
+                                  <div class="input-group mb-3">
+                                      <div class="input-group-prepend">
+                                          <span class="input-group-text px-1 font-amazon-bold font-1"
+                                              id="basic-addon1 ">$</span>
+                                      </div>
+                                      <input type="text" class="form-control font-amazon-normal font-1" placeholder="min"
+                                          aria-label="min" aria-describedby="basic-addon1">
+                                  </div>
+                                  <div class="input-group mb-3">
+                                      <div class="input-group-prepend">
+                                          <span class="input-group-text px-1 font-amazon-bold font-1"
+                                              id="basic-addon1">$</span>
+                                      </div>
+                                      <input type="text" class="form-control font-amazon-normal font-1" placeholder="max"
+                                          aria-label="max" aria-describedby="basic-addon1">
+                                  </div>
+                                  <div class="">
+                                      <button type="button"
+                                          class="btn btn-outline-secondary px-1  font-amazon-bold font-1">Go</button>
+                                  </div>
+      
+                              </li>
+                          </ul>
                       </div>
-                   
-                    
-                  </div>
-              </div>
-                    <!-- Seller Section -->
+                      <!-- filter avg rate -->
+                      <div class="col-md-12 col-sm col-6 text-center px-0 py-1 d-flex flex-column justify-content-center ">
+                        
+                          <p class="font-amazon-bold py-1">Minimum Average Rate</p>
+                          <ul>
+                              <li class="text-warning p-2" onclick="filterRate(this,event)">
+                                  <!-- <i class="fas fa-star"></i>
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i> -->
+                                  <!-- <i class="fas fa-star-half"></i> -->
+                                  <!-- <i class="far fa-star-half"></i> -->
+                                  <i class="far fa-star " data-value=0></i>
+                                  <i class="far fa-star" data-value=1></i>
+                                  <i class="far fa-star" data-value=2></i>
+                                  <i class="far fa-star" data-value=3></i>
+                                  <i class="far fa-star" data-value=4></i>
+                                  <!-- <i class="fas fa-star-half-alt"></i> -->
+                              </li>
+                          </ul>
+                       
+                        </div>
+                </div>
+                <!-- page Container -->
+                <div class="col-md-8 col-lg-9 col-xl-10">
+                    <!-- Customers Section -->
                     <div class=" row">
                       <div class="col-12 ">
                           <!-- top bar filter -->
@@ -635,34 +698,32 @@
                                   <span class="fas fa-times"></span>
                               </div>
                           </div>
-                          <!-- tabs -->
+                          <!--Customers tabs -->
                           <div class="container-fluid">
                             <ul class="nav nav-tabs font-amazon-bold " id="myTab" role="tablist">
                               <li class="nav-item " role="presentation">
-                                <a class="nav-link active px-1" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Details</a>
+                                <a class="nav-link active px-1" id="customerDet-tab" data-toggle="tab" href="#customerDet" role="tab" aria-controls="home" aria-selected="true">Details</a>
                               </li>
                               <li class="nav-item " role="presentation">
-                                <a class="nav-link px-1" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Summary</a>
+                                <a class="nav-link px-1" id="customerSumm-tab" data-toggle="tab" href="#customerSumm" role="tab" aria-controls="profile" aria-selected="false">Summary</a>
                               </li>
                               <li class="nav-item " role="presentation">
-                                <a class="nav-link px-1" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Expected</a>
+                                <a class="nav-link px-1" id="customerExp-tab" data-toggle="tab" href="#customerExp" role="tab" aria-controls="contact" aria-selected="false">Expected</a>
                               </li>
                             </ul>
-                            <!-- tabs content -->
-                            <div class="tab-content py-1" id="myTabContent">
-                              <div class="tab-pane fade show active overflow-auto" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                   <!-- orders table -->
+                            <!-- Customer tabs content -->
+                            <div class="tab-content py-1" id="customerTabsContent">
+                              <div class="tab-pane fade show active overflow-auto" id="customerDet" role="tabpanel" aria-labelledby="home-tab">
+                                   <!-- Customers table -->
                           <table class="table font-amazon-normal table-hover min-content">
                             <thead class="font-amazon-bold">
                                 <tr>
                                     <th scope="col">Id </th>
-                                    <th scope="col">SellerName</th>
-                                    <th scope="col">Stock Number</th>
-                                    <th scope="col">Sold Number</th>
-                                    <th scope="col">Stock Value <span class="fas fa-dollar-sign"></span></th>
-                                    <th scope="col">Sold Value <span class="fas fa-dollar-sign"></span></th>
-                                    <th scope="col">Avg.Customer rate<span class="fas fa-dollar-sign"></span></th>
-                                    <th scope="col">Avg.Stock rate<span class="fas fa-dollar-sign"></span></th>
+                                    <th scope="col">CustmorName</th>
+                                    <th scope="col"># Ordered</th>
+                                    <th scope="col">Total Price<span>&nbsp;</span><span class="fas fa-dollar-sign"></span></th>
+                                    <th scope="col">Delivered %</th>
+                                    <th scope="col">Cancelled %</th>
                                     <th scope="col">Avg.site rate</th>
                                 </tr>
                             </thead>
@@ -673,6 +734,8 @@
                                     <td>Jone Adames</td>
                                     <td>500</td>
                                     <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                    <td>80<span>&nbsp%&nbsp</span><span class="fas fa-check-circle text-success font-3"></span></td>
+                                    <td>20<span>&nbsp%&nbsp</span><span class="fas fa-times-circle text-danger font-3"></span></td>
                                     <td>5.0</td>
                                 </tr>
                                 <!-- row2  -->
@@ -681,26 +744,255 @@
                                     <td>Joe bradly</td>
                                     <td>500</td>
                                     <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                    <td>80<span>&nbsp%&nbsp</span><span class="fas fa-check-circle text-success font-3"></span></td>
+                                    <td>20<span>&nbsp%&nbsp</span><span class="fas fa-times-circle text-danger font-3"></span></td>
                                     <td>4.0</td>
                                 </tr>
                             </tbody>
                         </table>
-                        <!-- summary tap -->
+                        <!--Customer summary tap -->
                               </div>
-                              <div class="tab-pane fade py-1" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <canvas class="my-4 w-100" id="myChart"  ></canvas>
+                              <div class="tab-pane fade show py-1" id="customerSumm" role="tabpanel" aria-labelledby="customerSumm-tab">
+                                <canvas class="my-4 w-100" id="customerSummChart"></canvas>
     
                               </div>
-                              <div class="tab-pane fade py-1" id="contact" role="tabpanel" aria-labelledby="contact-tab">aaaaaaa</div>
+                              <div class="tab-pane fade py-1" id="customerExp" role="tabpanel" aria-labelledby="customerExp-tab"></div>
                             </div>
                           </div>
-                       
-                        
                       </div>
                   </div>
+                </div>
             </div>
+          </div>
+              <!-- page content3  Sellers-->
+        <!-- layout -->
+      <div class="container-fluid tab-pane fade show " id="sellers">
+        <div class="row ">
+                <!-- Seller side bar For Filtration -->
+                <div class=" col-md-4 col-lg-3 col-xl-2 font-amazon-normal row mx-0 justify-content-around  ">
+                    <!-- filter Department -->
+                    <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 d-flex flex-column justify-content-center">
+                        <p class="font-amazon-bold">Department</p>
+                        <ul class="custom-control custom-checkbox ">
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="dep1">
+                                <label class="custom-control-label " for="dep1" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Department1</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="dep2">
+                                <label class=" custom-control-label " for="dep2" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Department2</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="dep3">
+                                <label class="custom-control-label " for="dep3" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Department3</p>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                
+                    <!-- filter brand -->
+                    <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 d-flex flex-column justify-content-center">
+                        <p class="font-amazon-bold">Brand</p>
+                        <ul class="custom-control custom-checkbox ">
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="brand1">
+                                <label class="custom-control-label " for="brand1" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Brand1</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="brand2">
+                                <label class=" custom-control-label " for="brand2" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Brand2</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="brand3">
+                                <label class="custom-control-label " for="brand3" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Brand3</p>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- filter Deliver State -->
+                    <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 d-flex flex-column justify-content-center">
+                        <p class="font-amazon-bold">Deliever State</p>
+                        <ul class="custom-control custom-checkbox ">
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="delievered">
+                                <label class="custom-control-label " for="delievered" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Delievered</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="custom-control-input" id="cancelled">
+                                <label class=" custom-control-label " for="cancelled" onclick="makebold(this,event)">
+                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Cancelled</p>
+                                </label>
+                            </li>
+    
+                        </ul>
+                    </div>
+                        <!-- filter Price -->
+                        <div class="col-md-12 col-sm col-6 m-0 px-0 py-1 ">
+                          <p class="font-amazon-bold py-2">Price</p>
+                          <ul>
+                              <li class="d-flex flex-column ">
+                                  <div class="input-group mb-3">
+                                      <div class="input-group-prepend">
+                                          <span class="input-group-text px-1 font-amazon-bold font-1"
+                                              id="basic-addon1 ">$</span>
+                                      </div>
+                                      <input type="text" class="form-control font-amazon-normal font-1" placeholder="min"
+                                          aria-label="min" aria-describedby="basic-addon1">
+                                  </div>
+                                  <div class="input-group mb-3">
+                                      <div class="input-group-prepend">
+                                          <span class="input-group-text px-1 font-amazon-bold font-1"
+                                              id="basic-addon1">$</span>
+                                      </div>
+                                      <input type="text" class="form-control font-amazon-normal font-1" placeholder="max"
+                                          aria-label="max" aria-describedby="basic-addon1">
+                                  </div>
+                                  <div class="">
+                                      <button type="button"
+                                          class="btn btn-outline-secondary px-1  font-amazon-bold font-1">Go</button>
+                                  </div>
+      
+                              </li>
+                          </ul>
+                      </div>
+                      <!-- filter avg rate -->
+                      <div class="col-md-12 col-sm col-6 text-center px-0 py-1 d-flex flex-column justify-content-center ">
+                        
+                          <p class="font-amazon-bold py-1">Minimum Average Rate</p>
+                          <ul>
+                              <li class="text-warning p-2" onclick="filterRate(this,event)">
+                                  <!-- <i class="fas fa-star"></i>
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i> -->
+                                  <!-- <i class="fas fa-star-half"></i> -->
+                                  <!-- <i class="far fa-star-half"></i> -->
+                                  <i class="far fa-star " data-value=0></i>
+                                  <i class="far fa-star" data-value=1></i>
+                                  <i class="far fa-star" data-value=2></i>
+                                  <i class="far fa-star" data-value=3></i>
+                                  <i class="far fa-star" data-value=4></i>
+                                  <!-- <i class="fas fa-star-half-alt"></i> -->
+                              </li>
+                          </ul>
+                       
+                        </div>
+                </div>
+                <!-- page of Seller Container -->
+                <div class="col-md-8 col-lg-9 col-xl-10">
+                        <!-- Seller Section -->
+                        <div class=" row">
+                          <div class="col-12 ">
+                              <!-- top bar filter -->
+                              <div class="row shadow-sm p-2">
+                                  <div class="max-content ft-head-bg ft-head-hover font-amazon-normal text-white p-1 mx-1 rounded-pill font-0" >
+                                      <span class="">Department1</span> 
+                                      <span class="fas fa-times"></span>
+                                  </div>
+                                  <div class="max-content ft-head-bg ft-head-hover font-amazon-normal text-white p-1 mx-1 rounded-pill font-0" >
+                                      <span class="">Brand 1</span> 
+                                      <span class="fas fa-times"></span>
+                                  </div>
+                              </div>
+                              <!--Seller tabs -->
+                              <div class="container-fluid">
+                                <!-- seller details -->
+                                <ul class="nav nav-tabs font-amazon-bold " id="myTab" role="tablist">
+                                  <li class="nav-item " role="presentation">
+                                    <a class="nav-link active px-1" id="sellerDet-tab" data-toggle="tab" href="#sellerDet" role="tab" aria-controls="sellerDet" aria-selected="true">Details</a>
+                                  </li>
+                                <!-- seller Summary -->
+                                  <li class="nav-item " role="presentation">
+                                    <a class="nav-link px-1" id="sellerSumm-tab" data-toggle="tab" href="#sellerSumm" role="tab" aria-controls="sellerSumm" aria-selected="false">Summary</a>
+                                  </li>
+                                <!-- seller Expected -->
+                                  <li class="nav-item " role="presentation">
+                                    <a class="nav-link px-1" id="sellerExp-tab" data-toggle="tab" href="#sellerExp" role="tab" aria-controls="sellerExp" aria-selected="false">Expected</a>
+                                  </li>
+                                </ul>
+                                <!-- tabs content -->
+                                <div class="tab-content py-1" id="sellerContent">
+                                  <div class="tab-pane fade show active overflow-auto" id="sellerDet" role="tabpanel" aria-labelledby="sellerDet-tab">
+                                       <!-- Seller table -->
+                              <table class="table font-amazon-normal table-hover min-content">
+                                <thead class="font-amazon-bold">
+                                    <tr>
+                                        <th scope="col">Id </th>
+                                        <th scope="col">SellerName</th>
+                                        <th scope="col"># Stock </th>
+                                        <th scope="col"># Sold </th>
+                                        <th scope="col">Stock Value <span class="fas fa-dollar-sign"></span></th>
+                                        <th scope="col">Sold Value <span class="fas fa-dollar-sign"></span></th>
+                                        <th scope="col">Tax % </th>
+                                        <th scope="col">Tax Value<span class="fas fa-dollar-sign"></span></th>
+                                        <th scope="col">Avg.Customer rate</th>
+                                        <th scope="col">Avg.Stock rate</th>
+                                        <th scope="col">Avg.site rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- row1 -->
+                                    <tr>
+                                        <th class="font-amazon-normal" scope="row">1</th>
+                                        <td>Jone Adames</td>
+                                        <td>500</td>
+                                        <td>500</td>
+                                        <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                        <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                        <td>25<span>&nbsp</span><span>%</span></td>
+                                        <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                        <td>5.0</td>
+                                        <td>5.0</td>
+                                        <td>5.0</td>
+                                    </tr>
+                                    <!-- row2  -->
+                                    <tr>
+                                      <th class="font-amazon-normal" scope="row">1</th>
+                                      <td>Joe bradly</td>
+                                      <td>500</td>
+                                      <td>500</td>
+                                      <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                      <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                      <td>25<span>&nbsp</span><span>%</span></td>
+                                      <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                      <td>5.0</td>
+                                      <td>5.0</td>
+                                      <td>5.0</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                            <!-- summary tap -->
+                                  </div>
+                                  <div class="tab-pane fade show py-1" id="sellerSumm" role="tabpanel" aria-labelledby="sellerSumm-tab">
+                                    <canvas class="my-4 w-100" id="sellerSumm-myChart"></canvas>
+        
+                                  </div>
+                                  <div class="tab-pane fade py-1" id="sellerExp" role="tabpanel" aria-labelledby="sellerExp-tab"></div>
+                                </div>
+                              </div>
+                           
+                            
+                          </div>
+                      </div>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -708,9 +1000,56 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script>
     <!-- for chart -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+    <script>
+    
+      var ctx1 = document.getElementById('product-chart').getContext('2d');
+      var ctx2 = document.getElementById('customerSummChart').getContext('2d');
+      var ctx3 = document.getElementById('sellerSumm-myChart').getContext('2d');
+      var myLineChart = new Chart(ctx1, {
 
+      type: 'line',
+      data: {
+          labels: [0,1,2],
+          datasets:[{
+              label: 'Product Summary',
+              borderColor: '#4193D5',
+              backgroundColor: "rgba(255, 255, 255, 0)",
+              data: [0, 10, 5 ]
+          }]
+      },
+     // Configuration options go here
+     options: {}
+      });
+      var myLineChart2 = new Chart(ctx2, {
+      type: 'line',
+      data: {
+          labels: [0,1,2],
+          datasets:[{
+              label: 'Customers Summary',
+              borderColor: '#4193D5',
+              backgroundColor: "rgba(255, 255, 255, 0)",
+              data: [0, 10, 5 ]
+          }]
+      },
+     // Configuration options go here
+     options: {}
+      });
+      var myLineChart3 = new Chart(ctx3, {
+      type: 'line',
+      data: {
+          labels: [0,1,2],
+          datasets:[{
+              label: 'Sellers Summary',
+              borderColor: '#4193D5',
+              backgroundColor: "rgba(255, 255, 255, 0)",
+              data: [0, 10, 5 ]
+          }]
+      },
+     // Configuration options go here
+     options: {}
+      });
+  </script>
     <!--  -->
     <script src="dashboard.js"></script>
     <script src="index.js"></script>
@@ -753,6 +1092,20 @@
             }
 
         }
+        // handel manager tabs in Nav2
+        function activeTab(ob)
+    {
+     console.log("event")
+     var list = document.querySelectorAll("a.manager-tabs > span");
+     var target = ob.querySelector("a.manager-tabs > span");
+     for(i of list){
+       i.classList.remove("active-tab")
+       i.classList.remove("font-amazon-bold")
+     }
+     target.classList.add("active-tab")
+     target.classList.add("font-amazon-bold")
+
+    }
     </script>
 </body>
 
